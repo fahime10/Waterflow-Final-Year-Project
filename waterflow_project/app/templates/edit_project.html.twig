@@ -1,0 +1,45 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="lg-form-container">
+    <div class="row">
+        <div class="col-3">
+            <h1>Waterflow Manager</h1>
+        </div>
+        <div class="col">
+            <div class="row">
+                <h1>Edit Existing Project</h1>
+                <table id="project_to_edit">
+                    <tr>
+                        <th>Project ID</th>
+                        <th>Project Name</th>
+                        <th>Project Manager</th>
+                        <th>Stakeholder</th>
+                        <th>Due Date</th>
+                    </tr>
+                </table>
+                <fieldset>
+                    <br>
+                    <form action="{{ action }}" method="{{ method }}">
+                        <label for="project_id">Project ID: <input type="text" id="project_id" value="" name="project_id" readonly></label>
+                        <br><br>
+                        <label for="project_name">Project Name: <input type="text" id="project_name" name="project_name" maxlength="20" required></label>
+                        <br><br>
+                        {{ options | raw }}
+                        <br><br>
+                        <label for="due_date">Due Date: <input type="date" id="due_date" name="project_due_date" maxlength="10" required></label>
+                        <br><br>
+                        <button type="submit">Submit</button>
+                        <button id="reset" type="button">Reset values</button>
+                    </form>
+                </fieldset>
+                <form id="cancel" action="" method="{{ method }}">
+                    <button id="cancel_edit">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

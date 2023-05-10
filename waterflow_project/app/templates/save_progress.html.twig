@@ -1,0 +1,17 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="col">
+        <h1>Saving progress...</h1>
+        <p>Currently saving progress of the project...</p>
+        <p>All checked/unchecked boxes are being saved in the database</p>
+        <form action="{{ action }}" method="{{ method }}">
+            <input type="text" name="project_id_task" value="{{ project_id }}" style="display: none;">
+            <button>Click here to continue</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

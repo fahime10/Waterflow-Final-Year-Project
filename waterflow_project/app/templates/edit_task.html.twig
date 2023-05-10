@@ -1,0 +1,46 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="lg-form-container">
+    <div class="row">
+        <div class="col-3">
+            <h1>Waterflow Manager</h1>
+        </div>
+        <div class="col">
+            <div class="row">
+                <h1><b>Update task</b></h1>
+                <br>
+                <table id="task_to_edit">
+                    <tr>
+                        <th>Task ID</th>
+                        <th>Project ID</th>
+                        <th>Task Description</th>
+                        <th>Assigned To</th>
+                        <th>Due Date</th>
+                    </tr>
+                </table>
+                <fieldset>
+                    <br>
+                    <form action="{{ action }}" method="{{ method }}">
+                        <label for="task_id">Task ID: <input type="text" id="task_id" value="" name="task_id" readonly></label>
+                        <br><br>
+                        <label for="project_id_task">Project ID: <input type="text" id="project_id_task" value="" name="project_id_task" readonly></label>
+                        <br><br>
+                        <label for="task_description">Description: <input type="text" id="task_description" name="task_description" maxlength="20" required></label>
+                        <br><br>
+                        {{ options | raw }}
+                        <br><br>
+                        <label for="due_date">Due Date: <input type="date" id="task_due_date" name="task_due_date" maxlength="10" required></label>
+                        <br>
+                        <button type="submit" id="confirmed">Submit</button>
+                        <button type="button" id="reset_task_values">Reset values</button>
+                        <button id="cancel_edit_task" formaction="{{ action }}" formnovalidate>Cancel</button>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'login_layout.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<form action="{{ action }}" method="post">
+    <div class="container">
+        <h1>Waterflow Manager</h1>
+        <fieldset>
+            <h1>Welcome</h1>
+            <h2>Please login to continue</h2>
+            <label for="username">Username</label>
+            <br>
+            <input type="text" id="username" name="username" maxlength="30" size="30" required><br>
+            <label for="password">Password</label>
+            <br>
+            <input type="password" id="password" name="password" maxlength="100" size="30" required><br>
+            <a href="{{ action_password }}">Forgotten Password?</a>
+            <br><br>
+            <button type="submit">Login</button>
+        </fieldset>
+    </div>
+</form>
+{% endblock %}

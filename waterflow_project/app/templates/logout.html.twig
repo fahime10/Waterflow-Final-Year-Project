@@ -1,0 +1,9 @@
+{% extends 'main_layout.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>Logout process</h1>
+        <p>{{ message | raw }}</p>
+        <a href="{{ action }}">Click here to go back to login page</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="lg-form-container">
+        <div class="row">
+            <div class="col-3">
+                <h1>Waterflow Manager</h1>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <h1 id="project_name"></h1>
+                    <h1><b>Write a new task</b></h1>
+                    <br>
+                    <fieldset>
+                        <form action="{{ action }}" method="{{ method }}">
+                            <input id="project_id_task" name="project_id_task" value="" style="display: none;">
+                            <label for="task_description">Brief description of the task: <input type="text" id="task_description" name="task_description" maxlength="30" required></label>
+                            <br><br>
+                            {{ options | raw }}
+                            <br><br><br>
+                            <label for="task_due_date">Due Date: <input type="date" id="task_due_date" name="task_due_date" maxlength="10" required></label>
+                            <br><br>
+                            <br><br>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset values</button>
+                            <button id="cancel_task" formaction="{{ action }}" formnovalidate>Cancel</button>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

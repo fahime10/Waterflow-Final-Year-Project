@@ -1,0 +1,15 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Reports of finished projects</h1>
+        <br>
+        {{ reports | raw }}
+        <br>
+        <form action="{{ return_to_projects }}" method="{{ method }}">
+            <button>Click here to return to projects</button>
+        </form>
+    </div>
+{% endblock %}

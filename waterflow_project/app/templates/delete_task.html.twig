@@ -1,0 +1,39 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="lg-form-container">
+        <div class="row">
+            <div class="col-3">
+                <h1>Waterflow Manager</h1>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <h1><b>Delete task</b></h1>
+                    <br>
+                    <table id="task_to_edit">
+                        <tr>
+                            <th>Task ID</th>
+                            <th>Project ID</th>
+                            <th>Task Description</th>
+                            <th>Assigned To</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </table>
+                    <fieldset>
+                        <br>
+                        <form action="{{ action }}" method="{{ method }}" class="inline">
+                            <p id="center">Are you sure you want to delete this task?</p>
+                            <label for="task_id" style="margin-left: 400px; font-size: 20px;">Task ID: <input type="text" id="task_id" value="" name="task_id" readonly></label>
+                            <br>
+                            <input id="project_id_task" type="text" name="project_id_task" value="" style="display: none;">
+                            <button type="submit">Yes, I want to delete this task</button>
+                            <button id="cancel_delete_task" type="submit">No, I want to keep this task</button>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

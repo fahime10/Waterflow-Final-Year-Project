@@ -1,0 +1,165 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    {% if clearance == 5 %}
+        <div id="lg-form-container">
+            <div class="row">
+                <div class="col-3">
+                    <h1 class="left">Waterflow Manager</h1>
+                    <p class="left"> Hello, {{ username }}</p>
+                    <form action="{{ action_teams }}" method="{{ method }}" class="left">
+                        <button>Create a team</button>
+                    </form>
+                    <form action="{{ action_manage }}" method="{{ method }}" class="left">
+                        <button>Manage users</button>
+                    </form>
+                    <form action="{{ action_reports }}" method="{{ method }}" class="left">
+                        <button>View reports of finished projects</button>
+                    </form>
+                    <form action="{{ action_email }}" method="{{ method }}" class="left">
+                        <button>Send e-mail</button>
+                    </form>
+                    <form action="{{ action_logout }}" method="{{ method_2 }}" class="left">
+                        <button>Logout</button>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <h1>Project Overview</h1>
+                    <section id="options">
+                        <form action="{{ action_start }}" method="{{ method }}">
+                            <button>Start project</button>
+                        </form>
+                        <form id="edit" action="" method="{{ method }}">
+                            <button id="edit_project" disabled>Edit Project</button>
+                        </form>
+                        <form id="delete" action="" method="{{ method }}" >
+                            <button id="delete_project" disabled>Delete Project</button>
+                        </form>
+                        <form id="select" action="" method="{{ method }}">
+                            <button id="select_project" disabled>Select the project</button>
+                            <input id="project_id_task" type="text" value="" name="project_id_task" style="display: none;">
+                        </form>
+                    </section>
+                    <section>
+                        <p>Please select a project to edit or delete</p><br>
+                        {{ projects | raw }}
+                    </section>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if clearance == 4 %}
+    <div id="lg-form-container">
+        <div class="row">
+            <div class="col-3">
+                <h1 class="left">Waterflow Manager</h1>
+                <p class="left"> Hello, {{ username }}</p>
+                <form action="{{ action_teams }}" method="{{ method }}" class="left">
+                    <button>Create a team</button>
+                </form>
+                <form action="{{ action_pass }}" method="{{ method }}">
+                <button>Change password</button>
+                </form>
+                <form action="{{ action_reports }}" method="{{ method }}" class="left">
+                    <button>View reports of finished projects</button>
+                </form>
+                <form action="{{ action_email }}" method="{{ method }}" class="left">
+                    <button>Send e-mail</button>
+                </form>
+                <form action="{{ action_logout }}" method="{{ method_2 }}" class="left">
+                    <button>Logout</button>
+                </form>
+            </div>
+
+            <div class="col-6">
+                <h1>Project Overview</h1>
+                <br>
+                <section id="options">
+                    <form action="{{ action_start }}" method="{{ method }}">
+                        <button>Start project</button>
+                    </form>
+                    <form id="edit" action="" method="{{ method }}">
+                        <button id="edit_project" disabled>Edit Project</button>
+                    </form>
+                    <form id="delete" action="" method="{{ method }}" >
+                        <button id="delete_project" disabled>Delete Project</button>
+                    </form>
+                    <form id="select" action="" method="{{ method }}">
+                        <button id="select_project" disabled>Select the project</button>
+                        <input id="project_id_task" type="text" value="" name="project_id_task" style="display: none;">
+                    </form>
+                </section>
+                <br><br>
+                <section>
+                    <p>Please select a project to edit or delete</p>
+                    <br>
+                    {{ projects | raw }}
+                </section>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if clearance == 3 %}
+    <div id="lg-form-container">
+        <div class="row">
+            <div class="col-3">
+                <h1 class="left">Waterflow Manager</h1>
+                <p class="left"> Hello, {{ username }}</p>
+                <form action="{{ action_pass }}" method="{{ method }}" class="left">
+                    <button type="submit">Change password</button>
+                </form>
+                <form action="{{ action_reports }}" method="{{ method }}" class="left">
+                    <button>View reports of finished projects</button>
+                </form>
+                <form action="{{ action_email }}" method="{{ method }}" class="left">
+                    <button>Send e-mail</button>
+                </form>
+                <form action="{{ action_logout }}" method="{{ method_2 }}" class="left">
+                    <button>Logout</button>
+                </form>
+            </div>
+
+            <div class="col-6">
+                <h1>Project Overview</h1>
+                <form id="select" action="" method="{{ method }}">
+                    <button id="select_project">Select the project</button>
+                    <input id="project_id_task" type="text" value="" name="project_id_task" style="display: none;">
+                </form>
+                <section>
+                    <p>Please select a project to view its tasks</p>
+                    {{ projects | raw }}
+                </section>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if clearance == 2 %}
+        <div id="lg-form-container">
+            <div class="row">
+                <div class="col-3">
+                    <h1 class="left">Waterflow Manager</h1>
+                    <p class="left"> Hello, {{ username }}</p>
+                    <form action="{{ action_pass }}" method="{{ method }}" class="left">
+                        <button type="submit">Change password</button>
+                    </form>
+                    <form action="{{ action_email }}" method="{{ method }}" class="left">
+                        <button>Send e-mail</button>
+                    </form>
+                    <form action="{{ action_logout }}" method="{{ method_2 }}" class="left">
+                        <button>Logout</button>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <h1>Project Overview</h1>
+                    <form id="select" action="" method="{{ method }}">
+                        <button id="select_project">Select the project</button>
+                        <input id="project_id_task" type="text" value="" name="project_id_task" style="display: none;">
+                    </form>
+                    {{ projects | raw }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

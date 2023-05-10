@@ -1,0 +1,13 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div id="result_change_container" class="container">
+        <h1>Request Result</h1>
+        <br>
+        {{ message | raw }}
+        <br>
+        <a href="{{ pathway }}">Click here to continue</a>
+    </div>
+{% endblock %}

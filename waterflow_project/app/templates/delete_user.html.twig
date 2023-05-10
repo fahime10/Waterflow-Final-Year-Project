@@ -1,0 +1,35 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="lg-form-container">
+        <div class="row">
+            <div class="col-3">
+                <h1>Waterflow Manager</h1>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <h1><b>Delete User Form</b></h1>
+                    <br>
+                    <table id="user_to_delete">
+                        <tr>
+                            <th>User ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                            <th>Clearance</th>
+                        </tr>
+                    </table>
+                    <form action="{{ action }}" method="{{ method }}">
+                        <p id="center">Are you sure you want to delete this record?</p>
+                        <label for="user_id" style="margin-left: 400px; font-size: 20px;">User ID: <input value="" id="user_id" name="user_id" readonly></label>
+                        <p id="center">The user will be deleted permanently</p>
+                        <button type="submit">Yes, I want to delete the user</button>
+                        <button id="cancel_user_delete" type="submit">No, I want to keep the user</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

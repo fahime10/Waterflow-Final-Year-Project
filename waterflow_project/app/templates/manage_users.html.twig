@@ -1,0 +1,44 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div id="lg-form-container">
+        <div class="row">
+            <div class="col-3">
+                <h1 class="left">Waterflow Manager</h1>
+                <p class="left">Hello, {{ username }}</p>
+                <form id="return" action="" method="{{ method }}" class="left">
+                    <button id="return_projects">Return to projects</button>
+                </form>
+                <form action="{{ action_logout }}" method="{{ method }}" class="left">
+                    <button>Logout</button>
+                </form>
+            </div>
+
+            <div class="col-6">
+                <h1>All users stored in the database</h1>
+                <br>
+                <section id="options">
+                    <form action="{{ action_add_user }}" method="{{ method }}">
+                        <button>Add new user</button>
+                    </form>
+                    <form id="edit" action="" method="{{ method }}">
+                        <button id="edit_user" disabled>Edit existing user</button>
+                    </form>
+                    <form id="delete" action="" method="{{ method }}">
+                        <button id="delete_user" disabled>Delete user</button>
+                    </form>
+                </section>
+                <br>
+                {{ users | raw }}
+                <br><br>
+            </div>
+            <div class="col-2">
+                <h1>All teams stored in the database</h1>
+                <br>
+                {{ teams | raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

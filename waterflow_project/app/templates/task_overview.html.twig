@@ -1,0 +1,107 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    {% if clearance > 3 %}
+    <div id="lg-form-container">
+        <div class="row">
+            <div class="col-3">
+                <h1 class="left">Waterflow Manager</h1>
+                <p class="left"> Hello, {{ username }}</p>
+                <form id="return" action="" method="{{ method }}" class="left">
+                    <button id="return_projects">Return to projects</button>
+                </form>
+                <form action="{{ action_logout }}" class="left">
+                    <button>Logout</button>
+                </form>
+            </div>
+            <div class="col-6">
+                <h1>Task Overview</h1>
+                <section id="options">
+                    <form action="{{ action_start_task }}" method="{{ method }}">
+                        <button id="add_task">Write a new task</button>
+                    </form>
+                    <form id="edit" action="" method="{{ method }}">
+                        <button id="edit_task" disabled>Update task</button>
+                    </form>
+                    <form id="delete" action="" method="{{ method }}">
+                        <button id="delete_task" disabled>Delete Task</button>
+                    </form>
+                </section>
+                <section>
+                    <form action="{{ save_progress }}" method="post">
+                        <button id="saving_progress">Save progress</button>
+                        <h2 id="title"></h2>
+                        {{ tasks | raw }}
+                    </form>
+                    <button id="request">End the project</button>
+                    <div id="question">
+                        <p>Are you sure you want to end the project? </p>
+                        <form id="end_project" action="" method="post">
+                            <button id="yes" type="button">Yes</button>
+                            <button id="no" type="button">No</button>
+                            <br>
+                            <label id="project_name">Please enter the name for the report:
+                                <input type="text" name="project_name" maxlength="20">
+                                <br>
+                            </label>
+                            <button id="confirmEnd" type="submit">Confirm the end of this project</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if clearance == 3 %}
+        <div id="lg-form-container">
+            <div class="row">
+                <div class="col-3">
+                    <h1 class="left">Waterflow Manager</h1>
+                    <p class="left"> Hello, {{ username }}</p>
+                    <form id="return" action="" method="{{ method }}" class="left">
+                        <button id="return_projects">Return to projects</button>
+                    </form>
+                    <form action="{{ action_logout }}" class="left">
+                        <button>Logout</button>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <h1>Task Overview</h1>
+                    <section>
+                        <form action="{{ save_progress }}" method="post">
+                            <button id="saving_progress">Save progress</button>
+                            <h2 id="title"></h2>
+                            <br>
+                            {{ tasks | raw }}
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if clearance == 2 %}
+        <div id="lg-form-container">
+            <div class="row">
+                <div class="col-3">
+                    <h1 class="left">Waterflow Manager</h1>
+                    <p class="left"> Hello, {{ username }}</p>
+                    <form id="return" action="" method="{{ method }}" class="left">
+                        <button id="return_projects">Return to projects</button>
+                    </form>
+                    <form action="{{ action_logout }}" class="left">
+                        <button>Logout</button>
+                    </form>
+                </div>
+
+                <div class="col-6">
+                    <h1>Task Overview</h1>
+                    <section>
+                        {{ tasks | raw }}
+                    </section>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

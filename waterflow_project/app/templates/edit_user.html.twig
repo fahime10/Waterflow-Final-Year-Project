@@ -1,0 +1,52 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="lg-form-container">
+        <div class="row">
+            <div class="col-3">
+                <h1>Waterflow Manager</h1>
+                <div class="line"></div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <h1><b>Edit User Form</b></h1>
+                    <br>
+                    <table id="user_to_edit">
+                        <tr>
+                            <th>User ID</th>
+                            <th>User First Name</th>
+                            <th>User Last Name</th>
+                            <th>User Username</th>
+                            <th>Clearance Level</th>
+                        </tr>
+                    </table>
+                    <fieldset>
+                        <form id="edit_user" action="" method="{{ method }}">
+                            <label for="user_id">User ID: <input type="text" id="user_id" name="user_id" value="" readonly></label>
+                            <br><br>
+                            <p id="name_error">Name cannot have numbers and cannot be blank</p>
+                            <label for="first_name">User First Name: <input type="text" id="first_name" name="first_name" maxlength="20" autofocus required></label>
+                            <br><br>
+                            <label for="last_name">User Last Name: <input type="text" id="last_name" name="last_name" maxlength="20" required></label>
+                            <br><br>
+                            <p id="username_error">Username cannot be blank</p>
+                            <label for="username">User's username: <input type="text" id="username" name="username" maxlength="20" required></label>
+                            <br><br>
+                            <p>Password cannot be edited from here</p>
+                            <label for="password">User's password: <input type="text" id="password" name="password" value="*************" readonly></label>
+                            <br><br>
+                            <p id="clearance_error">Clearance level must be between 1 and 5</p>
+                            <label for="clearance">User's clearance level: <input type="text" id="clearance" name="clearance" maxlength="1" required></label>
+                            <br><br>
+                            <button type="submit" id="confirmed">Submit</button>
+                            <button type="button" id="reset_user_edit_values">Reset values</button>
+                            <button id="cancel_user_edit" formaction="{{ action }}" formmethod="{{ method }}" formnovalidate>Cancel</button>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div id="error_page_container" class="col">
+                <h1>Error</h1>
+                <p>You need to login again to continue</p>
+                <a href="{{ first_page }}">Home</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

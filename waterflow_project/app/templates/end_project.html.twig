@@ -1,0 +1,18 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form action="{{ action }}" method="{{ method }}">
+            <h1>End of project declaration</h1>
+            <p>All tasks have been set to completed and cannot be further edited</p>
+            <p>Here is the report</p>
+            <pre>
+                {{ report }}
+            </pre>
+            <br>
+            <button type="submit">Click here to return to projects</button>
+        </form>
+    </div>
+{% endblock %}

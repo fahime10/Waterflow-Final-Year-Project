@@ -1,0 +1,37 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <h1><b>Create a team</b></h1>
+                    <br>
+                    <form id="form" action="" method="{{ method }}">
+                        <p>Please provide a team name</p>
+                        <label for="team_name">Team name: <input type="text" id="team_name" name="team_name" maxlength="20" required autofocus></label>
+                        <br><br>
+                        <p>You can now select the number of users to put in a team</p>
+                        <br>
+                        <label for="user_1">Username: <input type="text" id="user_1" name="user_1" maxlength="20"></label>
+                        <br><br>
+                        <label for="user_2">Username: <input type="text" id="user_2" name="user_2" maxlength="20"></label>
+                        <br>
+                        <button id="confirm">Confirm</button>
+                        <button id="cancel" formnovalidate>Cancel</button>
+                        <br><br>
+                    </form>
+                    <section id="addRemove">
+                        <button id="add">Add one more user</button>
+                        <button id="remove">Remove</button>
+                    </section>
+                </div>
+            </div>
+            <div class="col">
+                {{ table | raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

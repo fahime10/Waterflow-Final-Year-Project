@@ -1,0 +1,20 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="lg-form-container">
+        <div class="row">
+            <div class="col">
+                <form action="{{ return }}" method="{{ method }}">
+                    <h3>Users have been successfully added to the team</h3>
+                    <p>Team name is <b>{{ team_name }}</b></p>
+                    <br>
+                    {{ table | raw }}
+                    <br>
+                    <button>Click here to return to projects</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

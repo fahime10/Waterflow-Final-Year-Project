@@ -1,0 +1,41 @@
+body {
+    color: #545AA7;
+    background-color: deepskyblue;
+    min-width: 700px;
+    min-height: 650px;
+}
+
+fieldset {
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 30px;
+    border: 4px solid black;
+    background-color: #4FFFB0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0.9rem;
+}
+
+label {
+    padding: 10px 0;
+    font-size: 20px;
+}
+
+input {
+    border: 2px solid #000000;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: grey;
+    color: white;
+}
+
+a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #545AA7;
+}

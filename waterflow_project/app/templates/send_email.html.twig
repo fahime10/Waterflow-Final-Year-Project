@@ -1,0 +1,48 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    {% if clearance != null %}
+    <div class="container">
+        {% if clearance > 2 %}
+        <div class="col">
+            <form id="e-mail" action="{{ action }}" method="{{ method }}">
+                <h1>Send e-mail form</h1>
+                <br>
+                <label for="recipient">Receiver of the e-mail:
+                    <input type="text" name="recipient" maxlength="100" required>
+                </label>
+                <br><br>
+                <label for="subject">Subject of the e-mail:
+                    <input type="text" name="subject" maxlength="50" required>
+                </label>
+                <br><br>
+                <label for="message">Please enter here your message:
+                    <textarea name="message" rows="5" cols="33" required></textarea>
+                </label>
+                <br>
+                <section id="buttons">
+                    <button>Submit e-mail</button>
+                    <button type="reset">Reset fields</button>
+                    <button formaction="{{ return_to_projects }}" formmethod="{{ method }}" formnovalidate>Click here to return to projects</button>
+                </section>
+            </form>
+        </div>
+        {% endif %}
+        {% if clearance == 2 %}
+            <h1>Email</h1>
+            <p>If you wish to send an email, please use this email address: </p>
+            <br>
+            <b>{{ email_address }}</b>
+            <br><br>
+            <form action="{{ return_to_projects }}" method="{{ method }}">
+                <button>Return to projects</button>
+            </form>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% if clearance == null %}
+        {% include 'error_view.html.twig' %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,179 @@
+body {
+    background-color: #E0FFFF;
+}
+
+fieldset {
+    border: 2px solid black;
+    padding-top: 7px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    padding: 10px;
+    color: #6a5acd;
+}
+
+p {
+    margin-bottom: 10px;
+    padding: 10px 0 10px 10px;
+}
+
+button {
+    margin: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: grey;
+    padding: 0.2rem 1rem;
+}
+
+button:hover {
+    background-color: darkorange;
+}
+
+#error_page_container {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    align-content: center;
+}
+
+#change_password_container {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    align-content: center;
+}
+
+#result_change_container {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    align-content: center;
+}
+
+table {
+    margin: 2rem 1rem;
+    font-size: 15px;
+}
+
+.left {
+    border-bottom: 2px solid black;
+}
+
+.col-3 {
+    border: 1px solid;
+    background-color: greenyellow;
+    height: 100vh;
+}
+
+.col-2 {
+    margin-right: 0.5rem;
+    width: 300px;
+}
+
+.col-6 {
+    margin-right: 0.2rem ;
+}
+
+#not_selected, #error_type, #name_error, #username_error, #clearance_error {
+    display: none;
+    color: red;
+}
+
+#center {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px;
+}
+
+th {
+    border: 2px solid black;
+    font-size: 15px;
+    background-color: limegreen;
+    text-align: center;
+}
+
+tr {
+    background-color: white;
+}
+
+tr:hover {
+    background-color: greenyellow;
+    cursor: pointer;
+}
+
+td {
+    border: 2px solid black;
+    font-size: 15px;
+    cursor: default;
+    padding: 7px 70px;
+    text-align: center;
+}
+
+.selected {
+    background-color: aquamarine;
+}
+
+#options {
+    display: flex;
+}
+
+#select_project {
+    background-color: forestgreen;
+}
+
+#select_project:hover {
+    background-color: darkorange;
+}
+
+#validateProject, #reset_user_values, #reset_user_edit_values, #reset_project_values, #reset_task_values,
+#cancel, #validate_user, #validate_user_edit {
+    width: 150px;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+#due_date, #task_due_date {
+    margin-bottom: 30px;
+}
+
+#user_2 {
+    margin-bottom: 10px;
+}
+
+#addRemove {
+    display: flex;
+}
+
+#question {
+    display: none;
+}
+
+#saving_progress {
+    background-color: forestgreen;
+}
+
+#saving_progress:hover {
+    background-color: darkorange;
+}
+
+label#project_name {
+    display: none;
+}
+
+#confirmEnd {
+    display: none;
+}
+
+#e-mail {
+    display: flex;
+    flex-direction: column;
+}
+
+#e-mail label {
+    padding: 10px;
+}
+
+#e-mail #buttons {
+    display: flex;
+}
